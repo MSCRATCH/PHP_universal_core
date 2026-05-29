@@ -1,0 +1,612 @@
+
+/*PHPUC*/
+/*install*/
+/*V1.0.0*/
+/*MSCRATCH*/
+/*MMXXV*/
+
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+/*root*/
+
+:root {
+
+font-size: 62.5%; /*10PX*/
+
+--body_bg_color: #39404A;
+--body_font_family:  'Roboto';
+--body_font_color: #BDC3C9;
+--body_line_height: 1.5;
+
+/*nav*/
+
+--navbar_border_color: #2F3742;
+--navbar_bg_color: #414751;
+--navbar_font_color: #BDC3C9;
+--navbar_title_font_family: 'Roboto';
+--navbar_title_font_size: 2rem;
+--navbar_title_font_weight: 500;
+
+/*nav*/
+
+/*wrapper*/
+
+--wrapper_border-radius: 5px;
+--wrapper_border_color: #2F3742;
+--wrapper_title_bg_color: #414751;
+--wrapper_bg_color: #3D444F;
+--wrapper_footer_bg_color: #414751;
+--wrapper_font_size: 1.5rem;
+--wrapper_font_weight: 400;
+
+/*wrapper*/
+
+/*footer*/
+
+--footer_font_family: 'Roboto';
+--footer_font_color: #9BA4B0;
+--footer_font_size: 1.5rem;
+
+/*footer*/
+
+/*buttons*/
+
+--btn_border_radius: 5px;
+--btn_bg_color: #5C789A;
+--btn_font_family: 'Roboto';
+--btn_font_size: 1.5rem;
+--btn_font_weight: 600;
+--btn_font_color: #E1E8EF;
+--btn_hover: #4E6682;
+
+--btn_rd_border_radius: 5px;
+--btn_rd_bg_color: #A65C5C;
+--btn_rd_font_family: 'Roboto';
+--btn_rd_font_size: 1.5rem;
+--btn_rd_font_weight: 600;
+--btn_rd_font_color: #E1E8EF;
+--btn_rd_hover: #8D4E4E;
+
+/*buttons*/
+
+/*forms*/
+
+--form_default_border_radius: 5px;
+--form_default_bg_color: #424954;
+--form_default_border_color: #2F3742;
+--form_default_font_family: 'Roboto';
+--form_default_font_size: 1.5rem;
+--form_default_font_weight: 400;
+--form_default_font_color: #BDC3C9;
+--form_default_focus: #464D59;
+
+--label_default_font_weight: 500;
+--label_default_font_color: #BDC3C9;
+
+--placeholder_font_family: 'Roboto';
+--placeholder_font_size: 1.4rem;
+--placeholder_font_weight: 300;
+--placeholder_font_color: #747D8A;
+
+/*forms*/
+
+/*headings*/
+
+--h1_font_font_family: 'Roboto';
+--h1_font_size: 2rem;
+--h1_font_weight: 700;
+--h1_font_text-decoration: none;
+--h1_font_color: #8EB1D9;
+
+/*headings*/
+
+/*paragraphs*/
+
+--paragraph_mtb: 1rem 0rem 1rem 0rem;
+
+/*paragraphs*/
+
+/*spans*/
+
+--span_b_font_family: 'Roboto';
+--span_b_font_size: 1.5rem;
+--span_b_font_weight: 500;
+--span_b_font_color: #8EB1D9;
+
+--span_r_font_family: 'Roboto';
+--span_r_font_size: 1.5rem;
+--span_r_font_weight: 500;
+--span_r_font_color: #A65C5C;
+
+/*spans*/
+
+}
+
+/*root*/
+
+body {
+background-color: var(--body_bg_color);
+font-family: var(--body_font_family);
+color: var(--body_font_color);
+line-height: var(--body_line_height);
+}
+
+/*nav*/
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(--navbar_border_color);
+background-color: var(--navbar_bg_color);
+color: var(--navbar_font_color);
+}
+
+.navbar_title {
+margin: 1rem;
+font-family: var(--navbar_title_font_family);
+font-size: var(--navbar_title_font_size);
+font-weight: var(--navbar_title_font_weight);
+}
+
+/*nav*/
+
+/*wrapper*/
+
+.main_wrapper {
+width: 100%;
+margin-top: 5rem;
+}
+
+.wrapper_title {
+padding: 1.5rem;
+border-top-left-radius: var(--wrapper_border-radius);
+border-top-right-radius: var(--wrapper_border-radius);
+border-bottom: 1px solid var(--wrapper_border_color);
+background-color: var(--wrapper_title_bg_color);
+}
+
+.wrapper {
+max-width: 750px;
+margin: 0 auto;
+border-radius: var(--wrapper_border-radius);
+border: 1px solid var(--wrapper_border_color);
+background-color: var(--wrapper_bg_color);
+font-size: var(--wrapper_font_size);
+font-weight: var(--wrapper_font_weight);
+text-align: left;
+}
+
+.wrapper_footer {
+padding: 1rem;
+border-bottom-left-radius: var(--wrapper_border-radius);
+border-bottom-right-radius: var(--wrapper_border-radius);
+border-top: 1px solid var(--wrapper_border_color);
+background-color: var(--wrapper_footer_bg_color);
+}
+
+.wrapper_content {
+padding: 1.5rem;
+}
+
+.wrapper_mb {
+margin-bottom: 2.5rem;
+}
+
+/*wrapper*/
+
+/*footer*/
+
+.footer {
+max-width: 750px;
+margin: 0 auto;
+margin-bottom: 5rem;
+padding: 1.5rem;
+font-family: var(--footer_font_family);
+font-size: var(--footer_font_size);
+text-align: left;
+color: var(--footer_font_color);
+}
+
+/*footer*/
+
+/*buttons*/
+
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: flex-start;
+padding: 0.5rem;
+border-radius: var(--btn_border_radius);
+border: none;
+background-color: var(--btn_bg_color);
+font-family: var(--btn_font_family);
+font-size: var(--btn_font_size);
+font-weight: var(--btn_font_weight);
+line-height: 1;
+text-align: left;
+text-decoration: none;
+color: var(--btn_font_color);
+cursor: pointer;
+}
+
+.btn:hover  {
+background-color: var(--btn_hover);
+transition: all 0.2s ease-in-out;
+}
+
+.btn_rd {
+display: inline-flex;
+align-items: center;
+justify-content: flex-start;
+padding: 0.5rem;
+border-radius: var(--btn_rd_border_radius);
+border: none;
+background-color: var(--btn_rd_bg_color);
+font-family: var(--btn_rd_font_family);
+font-size: var(--btn_rd_font_size);
+font-weight: var(--btn_rd_font_weight);
+line-height: 1;
+text-align: left;
+text-decoration: none;
+color: var(--btn_rd_font_color);
+cursor: pointer;
+}
+
+.btn_rd:hover  {
+background-color: var(--btn_rd_hover);
+transition: all 0.2s ease-in-out;
+}
+
+.btn_row {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+.btn_mt {
+margin-top: 1.5rem;
+}
+
+/*buttons*/
+
+/*forms*/
+
+input[type="text"].form_text_default {
+width: 100%;
+margin-bottom: 1rem;
+padding: 1.5rem;
+border-radius: var(--form_default_border_radius);
+border: 1px solid var(--form_default_border_color);
+outline: none;
+background-color: var(--form_default_bg_color);
+font-family: var(--form_default_font_family);
+font-size: var(--form_default_font_size);
+font-weight: var(--form_default_font_weight);
+text-align: left;
+color: var(--form_default_font_color);
+-webkit-appearance: none;
+}
+
+input[type="text"].form_text_default:focus {
+background-color: var(--form_default_focus);
+transition: all 0.2s ease-in-out;
+}
+
+input[type="password"].form_password_default {
+width: 100%;
+margin-bottom: 1rem;
+padding: 1.5rem;
+border-radius: var(--form_default_border_radius);
+border: 1px solid var(--form_default_border_color);
+outline: none;
+background-color: var(--form_default_bg_color);
+font-family: var(--form_default_font_family);
+font-size: var(--form_default_font_size);
+font-weight: var(--form_default_font_weight);
+text-align: left;
+color: var(--form_default_font_color);
+-webkit-appearance: none;
+}
+
+input[type="password"].form_password_default:focus {
+background-color: var(--form_default_focus);
+transition: all 0.2s ease-in-out;
+}
+
+/*forms*/
+
+/*headings*/
+
+h1 {
+font-family: var(--h1_font_font_family);
+font-size: var(--h1_font_size);
+font-weight: var(--h1_font_weight);
+text-decoration: var(--h1_font_text-decoration);
+color: var(--h1_font_color);
+}
+
+/*headings*/
+
+/*global, affects all lists.*/
+
+ul li, ol li {
+list-style: none;
+list-style-position: inside;
+}
+
+/*global, affects all lists.*/
+
+/*paragraphs*/
+
+p.paragraph_mtb {
+margin: var(--paragraph_mtb);
+}
+
+/*paragraphs*/
+
+/*spans*/
+
+span.span_b {
+font-family: var(--span_b_font_family);
+font-size: var(--span_b_font_size);
+font-weight: var(--span_b_font_weight);
+text-decoration: none;
+color: var(--span_b_font_color);
+}
+
+span.span_r {
+font-family: var(--span_r_font_family);
+font-size: var(--span_r_font_size);
+font-weight: var(--span_r_font_weight);
+text-decoration: none;
+color: var(--span_r_font_color);
+}
+
+/*spans*/
+
+/*responsive elements*/
+
+@media only screen and (max-width: 1200px) {
+
+.main_wrapper {
+margin: 7.5rem 2rem 7.5rem 2rem;
+width: auto;
+}
+
+.wrapper {
+width: auto;
+}
+
+.btn {
+width: 100%;
+}
+
+.btn_rd {
+width: 100%;
+}
+
+.btn_row {
+flex-direction: column;
+justify-content: center;
+gap: 1.5rem;
+}
+
+}
+
+@media only screen and (max-width: 992px) {
+
+.navbar {
+justify-content: flex-start;
+flex-direction: column;
+align-items:flex-start;
+}
+
+.main_wrapper {
+margin: 5rem 1.5rem 5rem 1.5rem;
+width: auto;
+}
+
+.wrapper {
+width: auto;
+}
+
+.btn {
+width: 100%;
+}
+
+.btn_rd {
+width: 100%;
+}
+
+.btn_row {
+flex-direction: column;
+justify-content: center;
+gap: 1.5rem;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+.navbar {
+justify-content: flex-start;
+flex-direction: column;
+align-items:flex-start;
+}
+
+.main_wrapper {
+margin: 5rem 1.5rem 5rem 1.5rem;
+width: auto;
+}
+
+.wrapper {
+width: auto;
+}
+
+.btn {
+width: 100%;
+}
+
+.btn_rd {
+width: 100%;
+}
+
+.btn_row {
+flex-direction: column;
+justify-content: center;
+gap: 1.5rem;
+}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+.navbar {
+justify-content: flex-start;
+flex-direction: column;
+align-items:flex-start;
+}
+
+.main_wrapper {
+margin: 5rem 1.5rem 5rem 1.5rem;
+width: auto;
+}
+
+.wrapper {
+width: auto;
+}
+
+.btn {
+width: 100%;
+}
+
+.btn_rd {
+width: 100%;
+}
+
+.btn_row {
+flex-direction: column;
+justify-content: center;
+gap: 1.5rem;
+}
+
+}
+
+/*responsive elements*/
+
+/*fonts*/
+
+/* roboto-300 - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+src: url('fonts/roboto-v50-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-300italic - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: italic;
+font-weight: 300;
+src: url('fonts/roboto-v50-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-regular - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+src: url('fonts/roboto-v50-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-italic - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: italic;
+font-weight: 400;
+src: url('fonts/roboto-v50-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-500 - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+src: url('fonts/roboto-v50-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-500italic - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: italic;
+font-weight: 500;
+src: url('fonts/roboto-v50-latin-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-600 - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+src: url('fonts/roboto-v50-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-600italic - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: italic;
+font-weight: 600;
+src: url('fonts/roboto-v50-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-700 - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+src: url('fonts/roboto-v50-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-700italic - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: italic;
+font-weight: 700;
+src: url('fonts/roboto-v50-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-800 - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+src: url('fonts/roboto-v50-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-800italic - latin */
+@font-face {
+font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+font-family: 'Roboto';
+font-style: italic;
+font-weight: 800;
+src: url('fonts/roboto-v50-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/*fonts*/
