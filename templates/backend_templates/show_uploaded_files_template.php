@@ -7,8 +7,6 @@ defined('CORE_LOADED') or die("Direct access to this file is restricted.");
 
 <?php $token_remove_file = generate_token('remove_file');?>
 
-<?php if ($result !== false) { ?>
-
 <div class="template_wrapper_mb">
 <div class="wrapper_title"><h3><i class="fa-solid fa-cloud"></i> <?php echo sanitize_1($text_templates['show_uploaded_files_template_title']);?></h3></div>
 <div class="wrapper_content">
@@ -18,6 +16,9 @@ defined('CORE_LOADED') or die("Direct access to this file is restricted.");
 <a class="btn btn--btn_primary" href="<?php echo BASE_URL;?>upload_file"><?php echo sanitize_1($text_templates['show_uploaded_files_template_btn_upload']);?></a>
 </div>
 </div>
+
+<?php if ($result !== false) { ?>
+
 <div class="card_group_row_3">
 <?php foreach ($result as $row) {  ?>
 <?php $file_path = files_path. '/'. $row['file_name']; ?>
