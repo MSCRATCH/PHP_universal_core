@@ -1,0 +1,22 @@
+<?php
+defined('CORE_LOADED') or die("Direct access to this file is restricted.");
+//This file is part of PHPUC
+//profile_widget_template.php
+//MMXXVI MSCRATCH
+?>
+
+<div class="template_wrapper">
+<div class="template_wrapper_title">
+<h3><i class="fa-solid fa-user"></i> <?php echo sanitize_3($profile['username']);?></h3>
+</div>
+<img src="<?= BASE_URL ?>profile_image/<?php echo sanitize_1($profile['user_profile_image']);?>" alt="profile_image" class="profile_image">
+<div class="template_wrapper_content">
+<li class="list_style_none"><?php echo sanitize_3($profile['user_level']);?></li>
+<li class="list_style_none"><?php echo sanitize_1($profile['user_profile_location']);?></li>
+<?php if ($profile['last_activity_minutes'] <= 5) { ?>
+<li class="list_style_none"><?php echo sanitize_1($text_templates['profile_template_online']);?></li>
+<?php } else { ?>
+<li class="list_style_none"><?php echo sanitize_1($profile['last_activity']);?></li>
+<?php } ?>
+</div>
+</div>
