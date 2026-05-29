@@ -21,31 +21,31 @@ PHP universal core is designed to be lightweight, maintainable, and extensible, 
 
 
 *Security*
-1. CSRF.
-2. XSS.
-3. CSP.
-4. Directory protection.
-5. Path traversal.
-6. SQLi protection.
-7. BCrypt hashing.
-8. Request logging.
-9. Activity logging.
-10. Session hardening.
-11. Session regeneration.
-12. Fancy URLs.
+1. CSRF
+2. XSS
+3. CSP
+4. Directory protection
+5. Path traversal
+6. SQLi protection
+7. BCrypt hashing
+8. Request logging
+9. Activity logging
+10. Session hardening
+11. Session regeneration
+12. Fancy URLs
 
 
 *Features*
-1. User management.
-2. Blog system.
-3. Comment moderation.
-4. User activity feed.
-5. File management.
-6. Theme system.
-7. Layout engine.
-8. Moderator backend.
-9. Custom pages.
-10. Dynamic navigations.
+1. User management
+2. Blog system
+3. Comment moderation
+4. User activity feed
+5. File management
+6. Theme system
+7. Layout engine
+8. Moderator backend
+9. Custom pages
+10. Dynamic navigations
 
 
 PHP_universal_core includes the free version of Font Awesome and PHPMailer. All icons, assets, and external libraries are subject to their respective licenses, which apply independently of PHP_universal_core’s license. Users are responsible for complying with the terms and conditions of Font Awesome and PHPMailer.
