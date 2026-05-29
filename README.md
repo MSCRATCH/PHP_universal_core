@@ -7,6 +7,7 @@ PHP universal core is designed to be lightweight, maintainable, and extensible, 
 ![PHP](https://img.shields.io/badge/PHP-8.4-blue.svg)
 ![Procedural PHP](https://img.shields.io/badge/PHP-Procedural-blue.svg)
 ![MySQLi](https://img.shields.io/badge/MySQLi-blue.svg)
+![SQL](https://img.shields.io/badge/MySQLi-blue.svg)
 ![HTML](https://img.shields.io/badge/HTML-5-orange.svg)
 ![CSS](https://img.shields.io/badge/CSS-3-blue.svg)
 ![GIMP](https://img.shields.io/badge/GIMP-2.x-blue.svg)
