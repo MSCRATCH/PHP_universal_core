@@ -1,0 +1,43 @@
+RewriteEngine On
+ErrorDocument 403 /index.php?p=error_403
+ErrorDocument 404 /index.php?p=error_404
+
+RewriteCond %{THE_REQUEST} \s/+index\.php [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^file/(.+)$ index.php?p=file&file=$1 [L,QSA]
+
+RewriteRule ^profile_image/(.+)$ index.php?p=profile_image&file=$1 [L,QSA]
+
+RewriteRule ^profile/([^/]+)$ index.php?p=profile&username=$1 [L,QSA]
+
+RewriteRule ^verify_email_address/([0-9]+)/([A-Fa-f0-9]{64})$ index.php?p=verify_email_address&user_id=$1&email_verification_token=$2 [L,QSA]
+
+RewriteRule ^article/([^/]+)/page/([0-9]+)$ index.php?p=article&title=$1&page=$2 [L,QSA]
+
+RewriteRule ^article/([^/]+)$ index.php?p=article&title=$1 [L,QSA]
+
+RewriteRule ^show_user_activity_log/([0-9]+)/page/([0-9]+)$ index.php?p=show_user_activity_log&user_id=$1&page=$2 [L,QSA]
+
+RewriteRule ^show_user_activity_log/([0-9]+)$ index.php?p=show_user_activity_log&user_id=$1 [L,QSA]
+
+RewriteRule ^edit_custom_page/([a-zA-Z0-9_-]+)$ index.php?p=edit_custom_page&custom_page_id=$1 [L,QSA]
+
+RewriteRule ^edit_primary_navigation_element/([a-zA-Z0-9_-]+)$ index.php?p=edit_primary_navigation_element&primary_navigation_element=$1 [L,QSA]
+
+RewriteRule ^edit_secondary_navigation_element/([a-zA-Z0-9_-]+)$ index.php?p=edit_secondary_navigation_element&secondary_navigation_element=$1 [L,QSA]
+
+RewriteRule ^edit_uploaded_file/([a-zA-Z0-9_-]+)$ index.php?p=edit_uploaded_file&file_id=$1 [L,QSA]
+
+RewriteRule ^edit_blog_article/([a-zA-Z0-9_-]+)$ index.php?p=edit_blog_article&article=$1 [L,QSA]
+
+RewriteRule ^news/([a-zA-Z0-9_-]+)$ index.php?p=news&id=$1 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/page/([0-9]+)$ index.php?p=$1&page=$2 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?p=$1 [L,QSA]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?p=$1&id=$2 [L,QSA]
