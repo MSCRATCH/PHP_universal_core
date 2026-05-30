@@ -122,7 +122,7 @@ All four layout files are mandatory and must exist within every theme, as they a
 ## Example Theme Structure
 
 ```text
-project/
+PHP_universal_core_3.0.0/
 ├── public/
 │   └── your_theme/
 │       ├── css/
