@@ -1,6 +1,4 @@
-## Creating custom themes for PHP_universal_core_3.0.0
-
-# Theme System
+# Creating custom themes for PHP_universal_core_3.0.0
 
  PHP_universal_core_3.0.0 includes a flexible theme system that allows developers to create fully customized themes.
 
@@ -47,7 +45,7 @@ The file name **must be exactly** `theme.json`. PHPUC uses this file to identify
 ```json
 {
     "theme_name": "your_theme",
-    "theme_author": "your_name,
+    "theme_author": "your_name",
     "theme_version": "1.0.0",
     "theme_stylesheet": "your_theme.css"
 }
