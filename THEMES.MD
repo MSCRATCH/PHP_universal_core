@@ -44,10 +44,10 @@ The file name **must be exactly** `theme.json`. PHPUC uses this file to identify
 
 ```json
 {
-    "theme_name": "your_theme",
-    "theme_author": "your_name",
-    "theme_version": "1.0.0",
-    "theme_stylesheet": "your_theme.css"
+"theme_name": "your_theme",
+"theme_author": "your_name",
+"theme_version": "1.0.0",
+"theme_stylesheet": "your_theme.css"
 }
 ```
 
@@ -147,14 +147,14 @@ PHPUC layouts use placeholders that are automatically replaced during rendering.
 
 ### General Tags
 
-| Tag                  | Description                                                                   |
-| -------------------- | ----------------------------------------------------------------------------- |
-| `{page_title}`       | Dynamic page title provided by the backend.                                   |
-| `{content}`          | Contains the rendered template content.                                       |
-| `{footer_text}`      | Dynamic footer text configured in the backend.                                |
-| `{page_description}` | Meta description tag content.                                                 |
-| `{page_keywords}`    | Meta keywords tag content.                                                    |
-| `{base_url}`         | Base URL of the installation. Always use this for links and asset references. |
+```text
+{page_title}
+{content}
+{footer_text}
+{page_description}
+{page_keywords}
+{base_url}
+```
 
 ### Navigation Tags
 
@@ -173,7 +173,7 @@ The following tags output  `<li>` navigation elements for system pages and may b
 {logout_nav_item}
 ```
 
-Authentication-dependent navigation items such as:
+Authentication dependent navigation items such as:
 
 ```text
 {login_nav_item}
@@ -190,17 +190,17 @@ are automatically shown or hidden depending on the user's authentication status.
 
 ### Dynamic Navigation
 
-| Tag               | Description                                                   |
-| ----------------- | ------------------------------------------------------------- |
-| `{primary_nav}`   | Outputs the primary navigation as unstyled `<li>` elements.   |
-| `{secondary_nav}` | Outputs the secondary navigation as unstyled `<li>` elements. |
+```text
+{primary_nav}
+{secondary_nav}
+```
 
 These tags intentionally return raw list items so they can be wrapped in custom `<ul>` containers and styled according to the theme's requirements.
 
 Example:
 
 ```html
-<ul class="main-nav">
+<ul class="main_nav">
 {primary_nav}
 </ul>
 ```
@@ -229,9 +229,9 @@ Example:
 
 ### Profile Widget
 
-| Tag                | Description                  |
-| ------------------ | ---------------------------- |
-| `{profile_widget}` | Displays the profile widget. |
+```text
+{profile_widget}
+```
 
 The `{profile_widget}` tag is only rendered within `layout_profile.php`.
 
