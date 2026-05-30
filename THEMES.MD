@@ -24,7 +24,7 @@ For security reasons, only files located within this directory can be accessed d
 
 ### Templates and Layouts
 
-The `/themes/your_theme` directory contains the theme templates and layout files. Layouts use placeholders in a template-engine-like manner, allowing content to be dynamically injected into predefined sections.
+The `/themes/your_theme` directory contains the theme templates and layout files. Layouts use placeholders, allowing content to be dynamically injected into predefined sections.
 
 Inline JavaScript is not executed. All JavaScript code must be placed in the theme's dedicated JavaScript directory.
 
@@ -51,15 +51,60 @@ The file name **must be exactly** `theme.json`. PHPUC uses this file to identify
 }
 ```
 
-## Handler-Specific Themes
+### Custom Layouts Per Page
 
-Each handler can define its own:
+Every page can use its own layout file.
 
-* Theme directory
-* Template
-* Layout
+The layout is determined by the parameter passed to `render_page()`. By default, many pages use the standard `layout` file, but this value can be changed to load any layout available in the currently active theme.
 
-This allows completely different layouts to be used for individual pages or sections of your application. If desired, every page can have its own dedicated theme and layout configuration.
+Example:
+
+```php
+render_page(
+$db,
+$settings,
+$text_functions,
+$text_handlers,
+$text_templates,
+$text_fatal_error_message,
+'frontend_templates',
+$activated_theme['theme_key'],
+'layout',
+[
+'template_name'   => 'blog_template',
+'current_page'    => $current_page,
+'number_of_pages' => $number_of_pages,
+'result'          => $result,
+]
+);
+```
+
+The eighth parameter specifies the layout file to load from the active theme. For example:
+
+```php
+'layout'
+```
+
+loads:
+
+```text
+/themes/your_theme/layout.php
+```
+
+while:
+
+```php
+'layout_profile'
+```
+
+loads:
+
+```text
+/themes/your_theme/layout_profile.php
+```
+
+This makes it possible to assign completely different layouts to individual pages, handlers, or application sections without creating additional themes.
+
 
 ## Required Layout Files
 
@@ -72,7 +117,7 @@ layout_tertiary.php
 layout_profile.php
 ```
 
-Although these files may contain identical content, they are intended to support different layout variations and are not required to be the same.
+All four layout files are mandatory and must exist within every theme, as they are referenced by different parts of the system.
 
 ## Example Theme Structure
 
@@ -94,8 +139,6 @@ project/
         ├── layout_tertiary.php
         └── layout_profile.php
 ```
-
-If the `theme.json` file is missing or invalid, PHPUC will ignore the theme and it will not be available for use.
 
 
 ## Available Layout Tags
@@ -158,7 +201,7 @@ Example:
 
 ```html
 <ul class="main-nav">
-    {primary_nav}
+{primary_nav}
 </ul>
 ```
 
@@ -193,4 +236,16 @@ Example:
 The `{profile_widget}` tag is only rendered within `layout_profile.php`.
 
 If the tag is used in any other layout file, no output will be generated. Alternatively, a custom layout containing `{profile_widget}` can be assigned to the profile page through `handlers_frontend/profile_handler.php`.
+
+
+## Security
+
+Each layout file must start with:
+
+```php id="k2p9aa"
+<?php
+defined('CORE_LOADED') or die("Direct access to this file is restricted.");
+```
+
+This prevents direct access to layout files via the browser and ensures they can only be loaded through the system.
 
