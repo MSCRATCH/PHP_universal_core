@@ -24,7 +24,7 @@ For security reasons, only files located within this directory can be accessed d
 
 ### Templates and Layouts
 
-The `/themes/your_theme` directory contains the theme templates and layout files. Layouts use placeholders, allowing content to be dynamically injected into predefined sections.
+The `/themes/your_theme` directory contains the theme layout files. Layouts use placeholders, allowing content to be dynamically injected into predefined sections.
 
 Inline JS is not executed. All JS code must be placed in the theme's dedicated JS directory.
 
