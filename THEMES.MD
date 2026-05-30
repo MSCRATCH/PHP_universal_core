@@ -103,7 +103,7 @@ loads:
 /themes/your_theme/layout_profile.php
 ```
 
-This makes it possible to assign completely different layouts to individual pages, handlers, or application sections without creating additional themes.
+This makes it possible to assign completely different layouts to individual pages.
 
 
 ## Required Layout Files
