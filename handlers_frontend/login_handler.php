@@ -1,0 +1,68 @@
+<?php
+defined('CORE_LOADED') or die("Direct access to this file is restricted.");
+//This file is part of PHPUC
+//login_handler.php
+//MMXXVI MSCRATCH
+
+//Access only by users who are not logged in.
+if (user_is_logged_in() === true) {
+header('Location:'. BASE_URL. $settings['default_start_page']);
+exit();
+}
+//Access only by users who are not logged in.
+
+if (isset($_POST['csrf_token'])) {
+if (isset($_POST['login'])) {
+if (validate_token('login', $_POST['csrf_token'])) {
+
+$username_form = '';
+if (isset($_POST['username_form'])) {
+$username_form = trim($_POST['username_form']);
+}
+
+$user_password_form = '';
+if (isset($_POST['user_password_form'])) {
+$user_password_form = trim($_POST['user_password_form']);
+}
+
+$result = login($db, $text_functions, $username_form, $user_password_form);
+if ($result === true) {
+$frontend_system_message = ([
+'message_text'    => $text_handlers['login_handler_successful_login'],
+'message_url'     => BASE_URL. $settings['default_start_page'],
+'message_button_text'  => $text_handlers['login_handler_btn_return'],
+]);
+frontend_system_message($frontend_system_message, $settings, $activated_theme);
+} else {
+$errors = $result;
+}
+} else {
+$frontend_system_message = ([
+'message_text'    => $text_handlers['csrf_text'],
+'message_url'     => BASE_URL. $settings['default_start_page'],
+'message_button_text'  => $text_handlers['csrf_btn'],
+]);
+frontend_system_message($frontend_system_message, $settings, $activated_theme);
+}
+}
+}
+
+$layout = $activated_theme['layout_config']['layouts']['login_handler'] ?? 'layout';
+$layout_maintenance_mode = $activated_theme['layout_config']['layouts']['maintenance_mode'] ?? 'layout';
+
+$template_directory = $activated_theme['template_config']['templates']['template_directory'] ?? 'frontend_templates';
+$template = $activated_theme['template_config']['templates']['login_handler'] ?? 'login_template';
+
+if ($feature_flags['maintenance_mode_enabled'] === 1) {
+render_page($db, $settings, $feature_flags, $text_functions, $text_handlers, $text_templates, $text_fatal_error_message, $activated_theme['theme_key'], $layout, [
+'template_name' => $template,
+'template_directory' => $template_directory,
+'errors'        => $errors ?? [],
+]);
+} else {
+render_page($db, $settings, $feature_flags, $text_functions, $text_handlers, $text_templates, $text_fatal_error_message, $activated_theme['theme_key'], $layout_maintenance_mode, [
+'template_name' => $template,
+'template_directory' => $template_directory,
+'errors'        => $errors ?? [],
+]);
+}
