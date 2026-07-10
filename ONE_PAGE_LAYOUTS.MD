@@ -30,7 +30,7 @@ Create a new handler in the handlers_frontend directory. The filename must end w
 Once the handler has been created and the corresponding layout is available, the page can be accessed directly via its URL without the _handler suffix. For example, a handler named your_page_handler.php is accessible as your_page. 
 Finally, the one-page layout can either be configured as the homepage in the backend or linked through the navigation system.
 
-The One Page Layout is designed to work together with the custom widget system. By placing widgets in predefined placeholders, you can build fully customizable one page websites. This makes it easy to create flexible landing pages, portfolios, or other single page websites that can be managed entirely through the CMS.
+The one page layout is designed to work together with the custom widget system. By placing widgets in predefined placeholders, you can build fully customizable one page websites. This makes it easy to create flexible landing pages, portfolios, or other single page websites that can be managed entirely through the CMS.
 
 ```php
 <?php
