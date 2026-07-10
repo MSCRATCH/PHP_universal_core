@@ -3,7 +3,7 @@
 PHP universal core includes a flexible theme system that allows developers to create fully customized themes. It is built with a strict focus on simplicity and performance, using native HTML and CSS only, without relying on frameworks such as SASS or Bootstrap. 
 This ensures full control over styling and markup while keeping the system lightweight and easy to extend or maintain.
 
-## 1. Directory Structure
+## 1. Directory structure
 
 A theme consists of two directories that must share the same name:
 
@@ -30,7 +30,7 @@ PHP_universal_core/
         ├── layout_config.json
         ├── layout.php
 ```
-### 2. Public Assets
+### Public assets
 
 The `/public/your_theme` directory contains all publicly accessible assets, including:
 
@@ -41,7 +41,7 @@ The `/public/your_theme` directory contains all publicly accessible assets, incl
 
 For security reasons, only files located within this directory can be accessed directly by the browser. Any assets required by your theme must therefore be stored and loaded from this location.
 
-## 3. Theme configuration
+## 2. Theme configuration
 
 Every theme directory must contain a configuration file named `theme.json`.
 
@@ -64,7 +64,7 @@ The file name **must be exactly** `theme.json`. PHPUC uses this file to identify
 }
 ```
 
-### 4. Custom Layouts Per Page
+## 3. Custom layouts Per Page
 
 Each page can use its own layout file. By default, all pages use the layout.php file from the active theme directory. If you want to assign different layouts to individual pages, you can add a layout_config.json file to themes/your_theme. 
 This file allows you to explicitly define which layout is used for each page. If you only need a single layout, you can safely ignore this feature.
@@ -88,6 +88,34 @@ Example:
 }
 ```
 
+## 4. Custom templates
+
+Each theme can have its own template directory, and each page can be assigned an individual template from that directory.
+To enable this feature, simply add a template_config.json file to themes/your_theme/. All custom templates must be stored in a subdirectory inside /templates.
+This feature is completely optional and only required if you want to provide custom page templates for your theme.
+
+Example:
+
+```json
+{
+"templates": {
+"template_directory": "frontend_templates",
+"widget_template_directory": "widget_templates",
+"article_handler": "article_template",
+"custom_page_handler": "custom_page_template",
+"blog_handler": "blog_template",
+"contact_handler": "contact_template",
+"login_handler": "login_template",
+"manage_profile_handler": "manage_profile_template",
+"profile_handler": "profile_template",
+"register_handler": "register_template",
+"user_activity_log_handler": "user_activity_log_template",
+"verify_email_address_handler": "verify_email_address_template",
+"profile_widget": "profile_widget_template"
+}
+}
+```
+
 
 ## 5. Required css files
 
@@ -101,7 +129,7 @@ public/themes/your_theme/css/system_pages.css
 
 ```
 
-## Available Layout Tags
+## 6. Available Layout Tags
 
 PHPUC layouts use placeholders that are automatically replaced during rendering.
 
@@ -148,7 +176,7 @@ Authentication dependent navigation items such as:
 
 are automatically shown or hidden depending on the user's authentication status. Theme developers only need to place the tags within the layout, no additional checks are required.
 
-### Administrator Statistics
+## Administrator Statistics
 
 The following tags provide runtime statistics:
 
@@ -160,16 +188,6 @@ The following tags provide runtime statistics:
 
 These values are only displayed when the current request is performed by an administrator.
 
-### Asset References
-
-Always prepend asset URLs with `{base_url}`.
-
-Example:
-
-```html
-<link rel="stylesheet" href="{base_url}themes/your_theme/your_theme.css">
-```
-
 ### Profile Widget
 
 ```text
@@ -180,19 +198,30 @@ The `{profile_widget}` tag is only rendered within `layout_profile.php`.
 
 If the tag is used in any other layout file, no output will be generated. Alternatively, a custom layout containing `{profile_widget}` can be assigned to the profile page through `handlers_frontend/profile_handler.php`.
 
+## 7. Asset References
 
-## Security
+Always prepend asset URLs with `{base_url}`.
+
+Example:
+
+```html
+<link rel="stylesheet" href="{base_url}themes/your_theme/your_theme.css">
+```
+
+## 8. Security
 
 Each layout file must start with:
 
-```php id="k2p9aa"
+```php
 <?php
 defined('CORE_LOADED') or die("Direct access to this file is restricted.");
 ```
 
 This prevents direct access to layout files via the browser and ensures they can only be loaded through the system.
 
-```php id="k2p9aa"
+## 9. Layout example
+
+```html
 <?php
 defined('CORE_LOADED') or die("Direct access to this file is restricted.");
 //layout.php
