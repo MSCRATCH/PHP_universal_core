@@ -196,9 +196,9 @@ These values are only displayed when the current request is performed by an admi
 
 The `{profile_widget}` tag is only rendered within `layout_profile.php`.
 
-If the tag is used in any other layout file, no output will be generated. Alternatively, a custom layout containing `{profile_widget}` can be assigned to the profile page through `handlers_frontend/profile_handler.php`.
+If the tag is used in any other layout file, no output will be generated.
 
-## 7. Asset References
+## 7. Asset references
 
 Always prepend asset URLs with `{base_url}`.
 
