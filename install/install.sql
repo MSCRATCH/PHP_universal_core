@@ -88,7 +88,7 @@ VALUES ('default');
 INSERT INTO `custom_navs_links`
 (`custom_nav_link_url`, `custom_nav_link_name`, `custom_nav_link_order`, `custom_nav_id`)
 VALUES
-('/blog', 'Home', 1, LAST_INSERT_ID());
+('blog', 'Home', 1, LAST_INSERT_ID());
 
 CREATE TABLE `custom_pages` (
 `custom_page_id` int(10) NOT NULL AUTO_INCREMENT,
