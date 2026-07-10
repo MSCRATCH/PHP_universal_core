@@ -1,0 +1,14 @@
+{
+"layouts": {
+"article_handler": "layout",
+"blog_handler": "layout",
+"contact_handler": "layout",
+"login_handler": "layout_tertiary",
+"maintenance_mode": "layout_secondary",
+"manage_profile_handler": "layout",
+"profile_handler": "layout_profile",
+"register_handler": "layout_secondary",
+"user_activity_log_handler": "layout",
+"verify_email_address_handler": "layout_tertiary"
+}
+}
