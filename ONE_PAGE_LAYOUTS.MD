@@ -35,21 +35,12 @@ The one page layout is designed to work together with the custom widget system. 
 ```php
 <?php
 defined('CORE_LOADED') or die("Direct access to this file is restricted.");
+//This file is part of PHPUC
 //one_page_handler.php
 
-render_page(
-$db,
-$settings,
-$feature_flags,
-$text_functions,
-$text_handlers,
-$text_templates,
-$text_fatal_error_message,
-'frontend_templates',
-$activated_theme['theme_key'],
-one_page_layout,
-[
+$layout = 'one_page_layout';
+
+render_page($db, $settings, $feature_flags, $text_functions, $text_handlers, $text_templates, $text_fatal_error_message, $activated_theme['theme_key'], $layout, [
 'page_type' => 'widget_page',
-]
-);
+]);
 ```
