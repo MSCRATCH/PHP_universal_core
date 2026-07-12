@@ -28,7 +28,7 @@ $allowed_frontend_sections = array(
 Create a new handler in the handlers_frontend directory. The filename must end with the _handler suffix, for example your_page_handler.php. The handler loads the layout from the active theme directory. In the example below, the layout is called one_page_layout.
 
 Once the handler has been created and the corresponding layout is available, the page can be accessed directly via its URL without the _handler suffix. For example, a handler named your_page_handler.php is accessible as your_page. 
-Finally, the one-page layout can either be configured as the homepage in the backend or linked through the navigation system.
+Finally, the one page layout can either be configured as the homepage in the backend or linked through the navigation system.
 
 The one page layout is designed to work together with the custom widget system. By placing widgets in predefined placeholders, you can build fully customizable one page websites. This makes it easy to create flexible landing pages, portfolios, or other single page websites that can be managed entirely through the CMS.
 
@@ -36,7 +36,7 @@ The one page layout is designed to work together with the custom widget system. 
 <?php
 defined('CORE_LOADED') or die("Direct access to this file is restricted.");
 //This file is part of PHPUC
-//one_page_handler.php
+//your_page_handler.php
 
 $layout = 'one_page_layout';
 
